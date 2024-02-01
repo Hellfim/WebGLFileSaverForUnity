@@ -1,0 +1,17 @@
+﻿# =============== #
+# Unity generated #
+# =============== #
+/[Ll]ibrary/
+/[Tt]emp/
+/[Oo]bj/
+/UserSettings/
+*.sln
+*.csproj
+.vsconfig
+/Logs/
+/Builds/
+.DS_Store
+/UIElementsSchema/
+.idea/
+.utmp/
+.vs/

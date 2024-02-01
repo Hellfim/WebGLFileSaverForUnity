@@ -11,7 +11,13 @@
 /* 
 * Edited by Nat for Unity Support. https://twitter.com/nateonus
 * License : Still MIT
-* Source  : Somewhere yet to be uploaded
+* Source  : https://github.com/Nateonus/WebGLFileSaverForUnity
+*/
+
+/* 
+* Modified and slightly tuned by Hellfim. https://twitter.com/nateonus
+* License : Still MIT
+* Source  : https://github.com/Hellfim/WebGLFileSaverForUnity
 */
 
 mergeInto(LibraryManager.library, {
@@ -151,20 +157,17 @@ mergeInto(LibraryManager.library, {
             evt.initMouseEvent('click', true, true, window, 0, 0, 0, 80, 20, false, false, false, false, 0, null);
             node.dispatchEvent(evt);
         }
-    },	
-	UNITY_SAVE: function (content, name, mimetype)
-	{
-        var blob = new Blob([Pointer_stringify(content)], { type: Pointer_stringify(mimetype) });
-		saveAs(blob, Pointer_stringify(name));
-	},
-    UNITY_SAVE_BYTEARRAY: function (arr, size, name, mimetype)
+    },
+    SaveByteArray: function (arr, size, name, mimetype)
     {
         var bytes = new Uint8Array(size);
-        for (var i = 0; i < size; i++) bytes[i] = HEAPU8[arr + i];
+        for (var i = 0; i < size; i++) {
+            bytes[i] = HEAPU8[arr + i];
+        }
         var blob = new Blob([bytes], { type: Pointer_stringify(mimetype) });
         saveAs(blob, Pointer_stringify(name));
     },
-	UNITY_IS_SUPPORTED: function ()
+	IsFileSaveSupported: function ()
 	{
 		try 
 		{

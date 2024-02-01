@@ -2,7 +2,7 @@
     "name": "com.hellfim.webgl-file-saver",
     "displayName": "WebGLFileSaver",
     "author": { "name": "Hellfim", "url": "https://github.com/Hellfim" },
-    "version": "1.0.0",
+    "version": "1.0.1",
     "unity": "2022.3",
     "description": "This plugin provides a simple way to save a file in WebGL builds"
 }
